@@ -13,8 +13,12 @@ class TransferFundsController: UIViewController {
     @IBOutlet weak var transferAmountLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
+    private var account: Account!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let accountTabController = tabBarController as! AccountTabController
+        account = accountTabController.account
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -23,7 +27,7 @@ class TransferFundsController: UIViewController {
     }
     
     private func setupStepper() {
-        stepper.minimumValue = 0
+        stepper.minimumValue = -(account.balance)
         stepper.maximumValue = 1000
         stepper.stepValue = 20
         stepper.value = 0
@@ -44,7 +48,8 @@ class TransferFundsController: UIViewController {
     }
     
     @IBAction func transferFunds(_ sender: UIButton) {
-        // TODO: complete implementation
+        account.balance += stepper.value
+        showAlert(title: "Funds Transferred", message: "")
     }
     
 }

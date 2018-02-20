@@ -8,15 +8,18 @@
 
 import Foundation
 
-class Account {
-    public var balance: Double 
+// needs to inherit from NSObject to be KVO compliant
+class Account: NSObject {
     
-    var description: String {
+    // making balance observable
+    @objc dynamic var balance: Double
+    
+    override var description: String {
         return "current account balance: \(balance)"
     }
     
-    init() {
-        self.balance = 50
+    override init() {
+        self.balance = 50 // default funds
     }
 }
 

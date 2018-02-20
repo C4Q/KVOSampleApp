@@ -9,6 +9,10 @@
 import UIKit
 
 class AccountTabController: UITabBarController {
+    
+    // create account with defaults
+    public var account = Account()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.white]
