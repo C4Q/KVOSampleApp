@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fmv-CJ-Lr6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Withdraw / Deposit-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TransferFundsController" customModule="KVOSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="fhO-3F-dv5">
+                                <rect key="frame" x="140.5" y="319" width="94" height="29"/>
+                                <color key="tintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="R9z-ha-d4C"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ7-32-kB4">
+                                <rect key="frame" x="124" y="124" width="127.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afO-vu-FMX">
+                                <rect key="frame" x="177" y="153" width="21" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfg-7l-bMp">
+                                <rect key="frame" x="107.5" y="522" width="160" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Confirm Transfer">
+                                    <color key="titleColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="transferFunds:" destination="BYZ-38-t0r" eventType="touchUpInside" id="69u-LM-25n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kZ7-32-kB4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6fw-w7-UR4"/>
+                            <constraint firstItem="afO-vu-FMX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DwR-0z-Ms2"/>
+                            <constraint firstItem="fhO-3F-dv5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="G1A-ml-JH5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nfg-7l-bMp" secondAttribute="bottom" constant="60" id="J7Y-WT-Spo"/>
+                            <constraint firstItem="fhO-3F-dv5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RNP-oI-GeZ"/>
+                            <constraint firstItem="afO-vu-FMX" firstAttribute="top" secondItem="kZ7-32-kB4" secondAttribute="bottom" constant="8" id="mR9-ax-fpa"/>
+                            <constraint firstItem="nfg-7l-bMp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tby-za-u66"/>
+                            <constraint firstItem="kZ7-32-kB4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="ts6-pP-1Zu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Withdraw / Deposit" id="PdY-3r-Nhs"/>
+                    <connections>
+                        <outlet property="stepper" destination="fhO-3F-dv5" id="WvT-X5-zzh"/>
+                        <outlet property="transferAmountLabel" destination="afO-vu-FMX" id="Kvn-Ke-9eL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="711.20000000000005" y="33.733133433283363"/>
+        </scene>
+        <!--Account Balance-->
+        <scene sceneID="pif-DM-2bS">
+            <objects>
+                <viewController storyboardIdentifier="BalanceViewController" id="PW3-WW-BzA" customClass="BalanceViewController" customModule="KVOSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sCh-c9-DZz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itZ-IZ-fM0">
+                                <rect key="frame" x="157" y="144" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uv-on-lEg">
+                                <rect key="frame" x="177" y="173" width="21" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0uv-on-lEg" firstAttribute="centerX" secondItem="sCh-c9-DZz" secondAttribute="centerX" id="GRZ-U4-yC4"/>
+                            <constraint firstItem="0uv-on-lEg" firstAttribute="top" secondItem="itZ-IZ-fM0" secondAttribute="bottom" constant="8" id="Nbg-es-6LN"/>
+                            <constraint firstItem="itZ-IZ-fM0" firstAttribute="top" secondItem="w2q-rz-SjT" secondAttribute="top" constant="80" id="cls-0R-Dow"/>
+                            <constraint firstItem="itZ-IZ-fM0" firstAttribute="centerX" secondItem="sCh-c9-DZz" secondAttribute="centerX" id="f0I-FU-c14"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w2q-rz-SjT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Account Balance" id="Nur-Oy-owO"/>
+                    <connections>
+                        <outlet property="balanceLabel" destination="0uv-on-lEg" id="xp8-Ac-exs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RnP-gI-bN3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="711" y="-692"/>
+        </scene>
+        <!--Transfer-->
+        <scene sceneID="xVt-p3-61a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QRU-fY-ExX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Transfer" image="transfer-funds" selectedImage="transfer-funds" id="OWI-W2-lu5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VvX-N1-CbH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="leL-X6-snw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nFj-S5-bzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82.400000000000006" y="33.733133433283363"/>
+        </scene>
+        <!--Account Tab Controller-->
+        <scene sceneID="u76-IR-coe">
+            <objects>
+                <tabBarController storyboardIdentifier="AccountTabController" automaticallyAdjustsScrollViewInsets="NO" id="fmv-CJ-Lr6" customClass="AccountTabController" customModule="KVOSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FFg-4b-Ljr">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="OfD-5G-H4a" kind="relationship" relationship="viewControllers" id="ocl-d0-P4a"/>
+                        <segue destination="QRU-fY-ExX" kind="relationship" relationship="viewControllers" id="E1z-uX-n4d"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hf-CS-DIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1170" y="-478"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="FHd-ae-Hcv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OfD-5G-H4a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Account" image="account-balance" selectedImage="account-balance" id="gD6-fi-j5l"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mLv-Mk-y0D">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PW3-WW-BzA" kind="relationship" relationship="rootViewController" id="UZa-l1-iM7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="APn-rV-fgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82" y="-692"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="account-balance" width="28" height="28"/>
+        <image name="transfer-funds" width="28" height="28"/>
+    </resources>
+</document>
